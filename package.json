@@ -5,8 +5,8 @@
   "scripts": {
     "build-client": "browserify src/client/index.ts -p [ tsify --noImplicitAny ] -o public/main.js",
     "watch-client": "watchify src/client/index.ts -p [ tsify --noImplicitAny ] -o public/main.js -v",
-    "build-server": "rimraf build && tsc src/server/index.ts --outDir build",
-    "watch-server": "rimraf build && tsc -w src/server/index.ts --outDir build",
+    "build-server": "rimraf build && tsc src/server/index.ts --rootDir src --outDir build",
+    "watch-server": "rimraf build && tsc -w src/server/index.ts --rootDir src --outDir build",
     "start": "node build/server/index",
     "serve": "node serve"
   },
