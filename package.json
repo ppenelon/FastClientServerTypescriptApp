@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "build-client": "browserify src/client/index.ts -p [ tsify --noImplicitAny ] -o public/main.js",
+    "watch-client": "watchify src/client/index.ts -p [ tsify --noImplicitAny ] -o public/main.js -v",
     "build-server": "rimraf build && tsc src/server/index.ts --outDir build",
+    "watch-server": "rimraf build && tsc -w src/server/index.ts --outDir build",
     "start": "node build/server/index",
     "serve": "node serve"
   },
@@ -24,6 +26,7 @@
     "browserify": "^16.2.3",
     "rimraf": "^2.6.3",
     "tsify": "^4.0.1",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "watchify": "^3.11.1"
   }
 }
